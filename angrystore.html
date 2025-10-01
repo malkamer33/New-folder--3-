@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angry Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <!-- NAVBAR (تعديل هذا الجزء) -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo-link">
+      <img class="logo" src="img/ggdrehbgders.png" alt="Angry Store Logo" />
+    </a>
+    <nav class="nav-links">
+      <a href="angrystore.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="games.html"><i class="fas fa-gamepad"></i> Games</a> <!-- تم تعديل هذا السطر -->
+      <a href="services.html"><i class="fas fa-headset"></i> Services</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="software.html"><i class="fas fa-microchip"></i> Software</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-secondary"><i class="fas fa-user"></i> Sign In</button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU (تعديل هذا الجزء) -->
+<div class="mobile-menu">
+  <nav class="mobile-nav">
+    <a href="angrystore.html"><i class="fas fa-home"></i> Home</a> <!-- تم تعديل هذا السطر -->
+    <a href="games.html"><i class="fas fa-gamepad"></i> Games</a>
+    <a href="services.html"><i class="fas fa-headset"></i> Services</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="software.html"><i class="fas fa-microchip"></i> Software</a>
+    <button class="btn btn-primary mobile-signin"><i class="fas fa-user"></i> Sign In</button>
+  </nav>
+</div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="hero-subtitle">Welcome to Angry Store</span>
+        <h1 class="hero-title">Your Trusted Store for Original Gaming</h1>
+        <p class="hero-desc">
+          At Angry Store, we bring you 100% original PC games and subscriptions
+          from trusted sources. Every account is private and non‑shared, giving
+          you safe access, lifetime ownership, and guaranteed authenticity.
+        </p>
+        <form class="search-form">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search games..."
+          />
+          <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+        </form>
+      </div>
+      <div class="hero-image">
+        <img
+          src="img/3940304b536796dcc176aa83203a3955.png"
+          alt="Featured Game"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING GAMES (VERTICAL STACKED CARDS) -->
+  <section class="trending">
+    <div class="container">
+      <div class="trending-header">
+        <span class="trending-label">Trending</span>
+        <h2 class="trending-title">Trending Games</h2>
+      </div>
+      <div class="trending-games">
+        <!-- Game Card 1 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="img/GTAv.png" alt="Assassins Creed" />
+            <div class="game-category">Open World</div>
+          </div>
+          <div class="game-details">
+            <h3 class="game-title">GTA V [Steam-PC] </h3>
+            <div class="game-info">
+              <div class="game-price">625 EGP</div>
+              <!-- ** تم إصلاح رقم الواتساب ** -->
+              <a href="https://wa.me/+201507875527" target="_blank" class="btn buy-btn">Buy</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Card 2 (مثال لتكرار) -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="img/3940304b536796dcc176aa83203a3955.png" alt="Red Dead Redemption" />
+            <div class="game-category">Adventure</div>
+          </div>
+          <div class="game-details">
+            <h3 class="game-title">Red Dead Redemption 2 [Steam-PC]</h3>
+            <div class="game-info">
+              <div class="game-price">599EGP</div>
+              <a href="https://wa.me/+201507875527" target="_blank" class="btn buy-btn">Buy</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Game Card 3 (مثال لتكرار) -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="img/d5af34b7d30bbb2974666e95bedc3388.png" alt="FIFA 2025" />
+            <div class="game-category">Sports</div>
+          </div>
+          <div class="game-details">
+            <h3 class="game-title">FIFA 2025 [Steam-PC]</h3>
+            <div class="game-info">
+              <div class="game-price">200EGP</div>
+              <a href="https://wa.me/+201507875527" target="_blank" class="btn buy-btn">Buy</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2025 Angry Store. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/+201507875534"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.body.classList.toggle('mobile-menu-open');
+    });
+  </script>
+</body>
+</html>

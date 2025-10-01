@@ -1,0 +1,496 @@
+/* —————————— RESET & BASE —————————— */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow-x: hidden;
+}
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* —————————— UTILITIES —————————— */
+.container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1.2rem;
+}
+.btn-primary {
+  background-color: #3CB5CD;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #3ECCC2;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: rgba(255,255,255,.1);
+}
+
+/* —————————— NAVBAR —————————— */
+.nav {
+  background-color: #c41f09;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+.logo {
+  height: 40px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  color: #fff;
+  margin-inline: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-links a.active {
+  background-color: rgba(255,255,255,0.1);
+}
+.nav-links a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+.nav-links a i {
+  font-size: 0.9rem;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+.nav-actions .btn {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Mobile menu button & panel */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+}
+.mobile-menu-btn span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.mobile-menu-open .mobile-menu-btn span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.mobile-menu-open .mobile-menu-btn span:nth-child(2) { opacity: 0; }
+.mobile-menu-open .mobile-menu-btn span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c41f09;
+  z-index: 99;
+  padding-top: 5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu-open .mobile-menu {
+  transform: translateX(0);
+}
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.mobile-nav a, .mobile-signin {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* —————————— HERO SECTION —————————— */
+.hero {
+  background-color: #c41f09;
+  color: #fff;
+  padding-block: 3rem 5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  margin-bottom: 3rem;
+}
+.hero-secondary {
+  background-color: #333;
+  clip-path: none; /* إزالة القص من صفحة الخدمات */
+}
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-text {
+  flex: 1 1 380px;
+}
+.hero-subtitle {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffe;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 15px;
+}
+.hero-subtitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.hero-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.hero-desc {
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  opacity: 0.9;
+}
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+}
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.search-input:focus {
+  outline: 2px solid #3CB5CD;
+}
+.hero-image img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+.hero-image img:hover {
+  transform: rotate(0);
+}
+
+/* —————————— SECTION TITLES —————————— */
+.trending-header,
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.trending-label {
+  display: inline-block;
+  color: #ee626b;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+.trending-title,
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.trending-title::after,
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #c41f09;
+}
+.section-desc {
+  margin-top: 0.5rem;
+  color: #666;
+  text-align: center;
+}
+
+
+/* ======================================
+   GAMES GRID (HOMEPAGE - VERTICAL CARDS)
+====================================== */
+.trending-games {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.game-card {
+  width: clamp(280px, 26vw, 300px); /* عرض مرن للبطاقة */
+  min-height: 520px; 
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.24s ease;
+  padding-bottom: 1.4rem;
+}
+.game-card:hover {
+  transform: translateY(-12px) scale(1.01);
+  box-shadow: 0 18px 38px rgba(196, 31, 9, 0.18);
+}
+
+.game-image {
+  width: 100%;
+  aspect-ratio: 3 / 4; 
+  background: #1f2329;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.08) brightness(0.95);
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+.game-card:hover .game-image img {
+  transform: scale(1.08);
+  filter: saturate(1.15) brightness(1.02);
+}
+.game-category {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #c41f09;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.game-details {
+  padding: 1.25rem 1.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+.game-details .game-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* لدفع السعر والزر للأسفل */
+}
+.game-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c41f09;
+}
+.buy-btn {
+  background: linear-gradient(105deg, #3cb5cd, #2fe2d2);
+  color: #fff !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.buy-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(60, 181, 205, 0.3);
+}
+
+
+/* ======================================
+   FEATURES GRID (SERVICES PAGE)
+====================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.feature-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 5px solid #3CB5CD;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(60,181,205,0.15);
+}
+.feature-icon {
+  font-size: 2.5rem;
+  color: #c41f09;
+  margin-bottom: 0.8rem;
+}
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.feature-card p {
+  color: #666;
+}
+
+/* —————————— FAQ SECTION —————————— */
+.faq-container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+.faq-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5rem;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.faq-question h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.faq-toggle {
+  font-size: 1.2rem;
+  color: #777;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.faq-item.active .faq-answer {
+  max-height: 300px; /* يجب أن يكون كافياً */
+  padding-bottom: 1rem;
+}
+
+/* —————————— FOOTER —————————— */
+.footer {
+  background-color: #2a2a2a;
+  color: #ccc;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.social-icons a {
+  color: #ccc;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: color 0.2s;
+}
+.social-icons a:hover {
+  color: #3CB5CD;
+}
+
+/* —————————— RESPONSIVENESS —————————— */
+@media (max-width: 992px) {
+    .hero-title { font-size: 1.8rem; }
+    .game-card { width: clamp(280px, 45vw, 350px); }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .hero { padding-block: 2rem 4rem; }
+  .hero-title { font-size: 1.7rem; }
+  .hero-desc { max-width: 100%; }
+  .search-form { flex-direction: column; max-width: 100%; }
+  .search-form button { margin-left: 0; }
+  .hero-image { order: -1; margin-bottom: 1.5rem; }
+  .footer-content { flex-direction: column; text-align: center; }
+  .social-icons { margin-top: 0.5rem; }
+}

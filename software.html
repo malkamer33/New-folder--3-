@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Software - Angry Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo-link">
+        <img class="logo" src="img/ggdrehbgders.png" alt="Angry Store Logo"/>
+      </a>
+      <nav class="nav-links">
+        <a href="angrystore.html"><i class="fas fa-home"></i> Home</a>
+        <a href="games.html"><i class="fas fa-gamepad"></i> Games</a>
+        <a href="services.html"><i class="fas fa-headset"></i> Services</a>
+        <a href="software.html" class="active"><i class="fas fa-microchip"></i> Software</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-secondary"><i class="fas fa-user"></i> Sign In</button>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="angrystore.html"><i class="fas fa-home"></i> Home</a>
+      <a href="games.html"><i class="fas fa-gamepad"></i> Games</a>
+      <a href="services.html"><i class="fas fa-headset"></i> Services</a>
+      <a href="software.html" class="active"><i class="fas fa-microchip"></i> Software</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <button class="btn btn-primary mobile-signin"><i class="fas fa-user"></i> Sign In</button>
+    </nav>
+  </div>
+
+  <!-- HERO بنفس ستايل الرئيسية -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="hero-subtitle">Genuine Offers • Technical Support</span>
+        <h1 class="hero-title">Genuine Software Licenses at Competitive Prices</h1>
+        <p class="hero-desc">Windows, Office, Security, and Design with instant delivery via WhatsApp.</p>
+        <!-- Search form with proper ID -->
+        <form class="search-form" id="softwareSearchForm">
+          <input type="text" class="search-input" id="softwareSearchInput" placeholder="Search for software..."/>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+        </form>
+      </div>
+      <div class="hero-image">
+        <img src="img/3940304b536796dcc176aa83203a3955.png" alt="Software Hero"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- كروت السوفت وير بنفس كروت الرئيسية (trending-games + game-card) -->
+  <section class="trending">
+    <div class="container">
+      <div class="trending-header">
+        <span class="trending-label">Software</span>
+        <h2 class="trending-title">Most Popular Items</h2>
+        <p class="section-desc">Adjust prices, images, and names as you like. Buy button opens WhatsApp on 01507875527.</p>
+      </div>
+
+      <!-- Container with ID for search functionality -->
+      <div class="trending-games" id="softwareCardsContainer">
+        <!-- بطاقة 1 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="img/Windows 11.jpg" alt="Windows 11 Pro"/>
+            <div class="game-category">Operating System</div>
+          </div>
+          <div class="game-details">
+            <h3 class="game-title">Windows 11 Pro OEM</h3>
+            <div class="game-info">
+              <div class="game-price">EGP 99</div>
+            <a href="https://wa.me/+201507875527" target="_blank" class="btn buy-btn">Buy</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- بطاقة 2 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="img/Microsoft Office_ ¿Cómo será su nuevo logo_.jpg" alt="Office 2021 Pro Plus"/>
+            <div class="game-category">Office Suite</div>
+          </div>
+          <div class="game-details">
+            <h3 class="game-title">Microsoft Office 365 [1 year]</h3>
+            <div class="game-info">
+              <div class="game-price">EGP 239</div>
+              <a href="https://wa.me/+201507875527" target="_blank" class="btn buy-btn">Buy</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- بطاقة 3 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="img/canvaaaaaaaaaaaa.jpg" alt="canvapro"/>
+            <div class="game-category">Subscription</div>
+          </div>
+          <div class="game-details">
+            <h3 class="game-title">Canva Pro [1 Year]</h3>
+            <div class="game-info">
+              <div class="game-price">EGP 119</div>
+              <a href="https://wa.me/+201507875527" target="_blank" class="btn buy-btn">Buy</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Contact -->
+      <div style="margin-top:1.5rem; text-align:center;">
+        <a href="https://wa.me/201507875527?text=I%20want%20different%20software" target="_blank" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i> WhatsApp: 01507875527
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2025 Angry Store. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://discord.com/users/malk_games493"><i class="fab fa-discord"></i></a>
+        <a href="https://wa.me/201507875527"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function(){
+      document.body.classList.toggle('mobile-menu-open');
+    });
+
+    // Software Search Functionality - Added complete search functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('softwareSearchInput');
+      const searchForm = document.getElementById('softwareSearchForm');
+      const softwareCardsContainer = document.getElementById('softwareCardsContainer');
+      const softwareCards = softwareCardsContainer.getElementsByClassName('game-card');
+
+      // Search function
+      function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        for (let i = 0; i < softwareCards.length; i++) {
+          const card = softwareCards[i];
+          const title = card.querySelector('.game-title').textContent.toLowerCase();
+          const category = card.querySelector('.game-category').textContent.toLowerCase();
+
+          if (title.includes(searchTerm) || category.includes(searchTerm) || searchTerm === '') {
+            card.style.display = ''; // Show the card
+          } else {
+            card.style.display = 'none'; // Hide the card
+          }
+        }
+      }
+
+      // Search on keyup (real-time search)
+      searchInput.addEventListener('keyup', performSearch);
+
+      // Search on form submit
+      searchForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        performSearch();
+      });
+    });
+  </script>
+</body>
+</html>
